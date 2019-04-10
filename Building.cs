@@ -15,21 +15,38 @@ namespace planner {
 
         public double Width {get; set;}
 
-        public double Height {get; set;}
+        public double Depth {get; set;}
 
-        public int Volume {get;}
-
-        public string address(string address) {
-          _address = address;
+        public double Volume {get{
+            return Width * Depth * (3 * Stories);}
         }
-        
 
-        public DateTime construct() {
+        public Building(string address){
+            _address = address;
+        }
+
+        public Building () {
+            _designer = "Jacob Sanders";
+        }
+
+        public void construct() {
             _dateConstructed = DateTime.Now;
         }
 
-        public string purchase(string name) {
+        public void purchase(string name) {
             _owner = name;
+        }
+
+        public void DisplayBuildings(){
+            Console.WriteLine($@"
+{_address}
+------------
+Designed by {_designer}
+Constructed on {_dateConstructed}
+Owned by {_owner}
+{Volume} cubic meters of space
+
+            ");
         }
 
     }
