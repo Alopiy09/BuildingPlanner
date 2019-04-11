@@ -42,10 +42,22 @@ namespace planner
             EightEightTwoOne.purchase("Toad");
             SixEightOneFour.purchase("Sam Fisher");
 
-            FourNineZeroTwo.DisplayBuildings();
-            FiveOneTwoEigth.DisplayBuildings();
-            EightEightTwoOne.DisplayBuildings();
-            SixEightOneFour.DisplayBuildings();
+            // FourNineZeroTwo.DisplayBuildings();
+            // FiveOneTwoEigth.DisplayBuildings();
+            // EightEightTwoOne.DisplayBuildings();
+            // SixEightOneFour.DisplayBuildings();
+
+            city DonutHills = new city ("Donut Hills");
+            DonutHills.mayor("Jacob Sanders");
+
+            DonutHills.ExpandCity(FourNineZeroTwo);
+            DonutHills.ExpandCity(FiveOneTwoEigth);
+            DonutHills.ExpandCity(EightEightTwoOne);
+            DonutHills.ExpandCity(SixEightOneFour);
+
+            foreach (Building Building in DonutHills.allBuildings){
+                Building.DisplayBuildings();
+            }
         }
     }
 }
